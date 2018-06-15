@@ -1,0 +1,36 @@
+
+<ion-content ng-class="{'has-loading': data.isLoading} " ng-controller="AuditCtrl">
+
+<div class="bar bar-header bar-dark">
+ <h2 class="title" >Audit Details</h2>
+ </div>
+
+<br>
+<br>
+
+       <a href="#/tab/auditQuestion" ng-click="question()"  class="button button-block button-positive" type="submit">
+        Check Questionaire
+      </a>
+
+<div id="hamza1" class="buttons"  style="display:block;">
+      <button class="button button-block button-positive" ng-click="openModal(1); getDate(1);" type="submit">
+        Audit Outcome Sheet
+      </button>
+      </div>
+<div id="hamza2" class="buttons2" style="display:block;">
+      <button class="button button-block button-positive" ng-click="openModal(3); getDate(3);"  type="submit">
+       Expense Claim Sheet
+      </button>
+      </div>
+     <!-- ng-click="changeOriantationLandspace()"
+      <button class="button button-block button-positive" type="submit">
+        End Audit
+      </button>
+-->
+
+
+       <a href="#/tab/dash" class="button button-block button-positive" >Back</a>
+
+
+</ion-content>
+

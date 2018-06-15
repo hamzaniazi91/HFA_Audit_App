@@ -1,0 +1,2410 @@
+<ion-view view-title="Audit App"  ng-controller="AuditCtrl">
+
+
+     <ion-content ng-class="{'has-loading': data.isLoading}">
+
+     
+
+
+
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <form class="form-horizontal">
+                        <fieldset>
+
+                        <a href="#/tab/audit" class="button button-positive" >Back</a>
+                        <br>
+                        <br>
+                            <!-- Form Name -->
+                            <legend></legend>
+                            <!--                            Stpe one start-->
+                            <div id="step1">
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="CompanyNameQ">Company Name</label>   
+
+
+                                    <div class="col-md-4">
+                                        <input id="CompanyNameQ" name="CompanyNameQ" type="text" placeholder=""
+                                               class="form-control input-md" style="font-weight: bold;border:solid 1px orange;">
+
+                                    </div>
+                                </div>
+
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="CompanyAddressQ">Company Address</label>
+
+                                    <div class="col-md-4">
+                                        <input  id="CompanyAddressQ" name="CompanyAddressQ" type="text" placeholder=""
+                                               class="form-control input-md" style="font-weight: bold;border:solid 1px orange;">
+
+                                    </div>
+                                </div>
+
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="TelephoneNumberQ">Telephone
+                                        Number</label>
+
+                                    <div class="col-md-4">
+                                        <input id="TelephoneNumberQ" name="TelephoneNumberQ" type="text" placeholder=""
+                                               class="form-control input-md" style="font-weight: bold;border:solid 1px orange;">
+
+                                    </div>
+                                </div>
+
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="ContactNameQ">Contact Name</label>
+
+                                    <div class="col-md-4">
+                                        <input id="ContactNameQ" name="ContactNameQ" type="text" placeholder=""
+                                               class="form-control input-md" style="font-weight: bold;border:solid 1px orange;">
+
+                                    </div>
+                                </div>
+
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="DateOfAudit">Date of Audit</label>
+
+                                    <div class="col-md-4">
+                                        <input id="DateOfAudit" name="DateOfAudit" type="text" placeholder=""
+                                               class="form-control input-md" style="font-weight: bold;border:solid 1px orange;">
+
+                                    </div>
+                                </div>
+
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="AuditorNameQ">Auditor's Name</label>
+
+                                    <div class="col-md-4">
+                                        <input id="AuditorNameQ" name="AuditorNameQ" type="text" placeholder=""
+                                               class="form-control input-md" style="font-weight: bold;border:solid 1px orange;">
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <h3>Company Information</h3>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="BriefCompanyProfileQ">Brief Company
+                                        Profile</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="BriefCompanyProfileQ" 
+                                              name="BriefCompanyProfileQ" style="font-weight: bold;border:solid 1px orange;"></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="ECQ">EC Number</label>
+
+                                    <div class="col-md-4">
+                                        <input id="ECQ" name="ECQ" type="text" placeholder=""
+                                               class="form-control input-md" style="font-weight: bold;border:solid 1px orange;">
+
+                                    </div>
+                                </div>
+
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="HFAStandardQ">HFA Standard Present on
+                                        site</label>
+
+                                    <div class="col-md-4">
+                                        <input id="HFAStandardQ" name="HFAStandardQ" type="text" placeholder=""
+                                               class="form-control input-md" style="font-weight: bold;border:solid 1px orange;">
+
+                                    </div>
+                                </div>
+                                <!-- Next Button Initial Step-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="initailStep"></label>
+                                    <div class="col-md-4">
+                                        <button id="initialStep" name="initailStep" type="button" class="btn btn-success">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--                            Step one end-->
+                            <!--                            Step two start-->
+                            <div style="display: block;" id="step2">
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="col-lg-10">
+                                    <h3>Site Information</h3>
+                                    <h3>PLANT & EQUIPMENT</h3>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="IsPlantSideControlled">Is entry to
+                                        slaughterhouse/ portioning and cutting plant site controlled? Please state
+                                        control
+                                        procedures.</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="IsPlantSideControlled-0">
+                                                <input type="radio" name="IsPlantSideControlled"
+                                                       id="IsPlantSideControlled-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="IsPlantSideControlled-1">
+                                                <input type="radio" name="IsPlantSideControlled"
+                                                       id="IsPlantSideControlled-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="IsPlantSideControlledCommentsQ" >Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="IsPlantSideControlledCommentsQ"
+                                              name="IsPlantSideControlledCommentsQ" style="font-weight: bold;border:solid 1px orange;"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="ClearZone">Is there a clear zone around
+                                        the
+                                        building perimeters?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="ClearZone-0">
+                                                <input type="radio" name="ClearZone"
+                                                       id="ClearZone-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="ClearZone-1">
+                                                <input type="radio" name="ClearZone"
+                                                       id="ClearZone-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="ClearZoneCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="ClearZoneCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="ClearZoneCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="ExternalAreas">Are external areas on a
+                                        housekeeping schedule?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="ExternalAreas-0">
+                                                <input type="radio" name="ExternalAreas"
+                                                       id="ExternalAreas-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="ExternalAreas-1">
+                                                <input type="radio" name="ExternalAreas"
+                                                       id="ExternalAreas-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="ExternalAreasCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="ExternalAreasCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="ExternalAreasCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="wasteDispose">How is the waste
+                                        (solid/liquid/
+                                        waste water / blood) disposed off?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="wasteDispose-0">
+                                                <input type="radio" name="wasteDispose"
+                                                       id="wasteDispose-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="wasteDispose-1">
+                                                <input type="radio" name="wasteDispose"
+                                                       id="wasteDispose-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="wasteDisposeCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="wasteDisposeCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="wasteDisposeCommentsQ"></textarea> 
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="wasteContainer">Are all waste containers
+                                        suitably covered and immediate areas kept clean to prevent bad smell / pest
+                                        infestation?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="wasteContainer-0">
+                                                <input type="radio" name="wasteContainer"
+                                                       id="wasteContainer-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="wasteContainer-1">
+                                                <input type="radio" name="wasteContainer"
+                                                       id="wasteContainer-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="wasteContainerCommentsQ">Comments</label>
+
+                                    <div class="col-md-4"> 
+                                    <textarea class="form-control" id="wasteContainerCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="wasteContainerCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="badSmell">Does the site itself or its
+                                        direct
+                                        neighbours present bad smell /
+                                        infestation risk?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="badSmell-0">
+                                                <input type="radio" name="badSmell"
+                                                       id="badSmell-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="badSmell-1">
+                                                <input type="radio" name="badSmell"
+                                                       id="badSmell-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="badSmellCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="badSmellCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="badSmellCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="protectionProducts">Is the
+                                        slaughterhouse/
+                                        portioning
+
+                                        and cutting plant (including walls,
+
+                                        floors, coving, overheads,
+
+                                        windows, and doors) of all
+
+                                        buildings constructed, finished
+
+                                        and maintained to provide
+
+                                        protection to the products from
+
+                                        any form of contamination and to
+
+                                        facilitate cleaning? If NO, please
+
+                                        state proposed actions / timetable.</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="protectionProducts-0">
+                                                <input type="radio" name="protectionProducts"
+                                                       id="protectionProducts-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="protectionProducts-1">
+                                                <input type="radio" name="protectionProducts"
+                                                       id="protectionProducts-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="protectionProductsCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="protectionProductsCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="protectionProductsCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="drains">Are drains able to cope with all
+
+                                        process and cleaning
+
+                                        requirements?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="drains-0">
+                                                <input type="radio" name="drains"
+                                                       id="drains-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="drains-1">
+                                                <input type="radio" name="drains"
+                                                       id="drains-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="drainsCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="drainsCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="drainsCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="Cleaningaccess">Are all equipments
+                                        machines /
+
+                                        equipment easily accessible for
+
+                                        regular cleaning?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="Cleaningaccess-0">
+                                                <input type="radio" name="Cleaningaccess"
+                                                       id="Cleaningaccess-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="Cleaningaccess-1">
+                                                <input type="radio" name="Cleaningaccess"
+                                                       id="Cleaningaccess-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="CleaningaccessCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="CleaningaccessCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="CleaningaccessCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="Lightningstandard">Is the standard of
+                                        lighting
+
+                                        adequate for the type of
+
+                                        operations?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="Lightningstandard-0">
+                                                <input type="radio" name="Lightningstandard"
+                                                       id="Lightningstandard-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="Lightningstandard-1">
+                                                <input type="radio" name="Lightningstandard"
+                                                       id="Lightningstandard-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="LightningstandardCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="LightningstandardCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="LightningstandardCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+
+
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="ventilation">Is extraction sufficient to
+                                        allow
+
+                                        for adequate ventilation in all
+
+                                        areas?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="ventilation-0">
+                                                <input type="radio" name="ventilation"
+                                                       id="ventilation-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="ventilation-1">
+                                                <input type="radio" name="ventilation"
+                                                       id="ventilation-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="ventilationCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="ventilationCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="ventilationCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="storageCapacity">Is there enough storage
+                                        capacity
+
+                                        on the plant for all the products
+
+                                        and packaging?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="storageCapacity-0">
+                                                <input type="radio" name="storageCapacity"
+                                                       id="storageCapacity-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="storageCapacity-1">
+                                                <input type="radio" name="storageCapacity"
+                                                       id="storageCapacity-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="storageCapacityCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="storageCapacityCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="storageCapacityCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="pallets">What kinds of pallets are used
+                                        to
+
+                                        store materials – in- process or
+
+                                        open products?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="pallets-0">
+                                                <input type="radio" name="pallets"
+                                                       id="pallets-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="pallets-1">
+                                                <input type="radio" name="pallets"
+                                                       id="pallets-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="palletsCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="palletsCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="palletsCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="tempratures">How are the temperatures of
+                                        chill/
+
+                                        frozen storage rooms monitored?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="tempratures-0">
+                                                <input type="radio" name="tempratures"
+                                                       id="tempratures-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="tempratures-1">
+                                                <input type="radio" name="tempratures"
+                                                       id="tempratures-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="tempraturesCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="tempraturesCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="tempraturesCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="tempraturesChecked">How often are the
+                                        temperatures
+
+                                        checked?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="tempraturesChecked-0">
+                                                <input type="radio" name="tempraturesChecked"
+                                                       id="tempraturesChecked-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="tempraturesChecked-1">
+                                                <input type="radio" name="tempraturesChecked"
+                                                       id="tempraturesChecked-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="tempraturesCheckedCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="tempraturesCheckedCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="tempraturesCheckedCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!-- Next Button step 2-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="step2Next"></label>
+                                    <div class="col-md-4">
+                                        <button id="step2Next" name="step2Next" type="button" class="btn btn-success">Next</button>
+                                    </div>
+                                </div>
+                                <!--                            Step 2 end-->
+                            </div>
+                            <!--                            Step 3 start-->
+                            <div style="display: block;" id="step3">
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="col-lg-10">
+                                    <h3>QUALITY SYSTEMS</h3>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="QualitySystems">Does the business have
+                                        Quality
+
+                                        systems (HACCP, GMP, ISO
+
+                                        9001, Meat hygiene, Environment
+
+                                        & Health, etc), which is available
+
+                                        for inspection?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="QualitySystems-0">
+                                                <input type="radio" name="QualitySystems"
+                                                       id="QualitySystems-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="QualitySystems-1">
+                                                <input type="radio" name="QualitySystems"
+                                                       id="QualitySystems-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="QualitySystemsCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="QualitySystemsCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="QualitySystemsCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="writtenDocs">Does the business have
+                                        written
+
+                                        documents relating animal
+
+                                        welfare to product safety,
+
+                                        traceability and quality systems?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="writtenDocs-0">
+                                                <input type="radio" name="writtenDocs"
+                                                       id="writtenDocs-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="writtenDocs-1">
+                                                <input type="radio" name="writtenDocs"
+                                                       id="writtenDocs-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="writtenDocsCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="writtenDocsCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="writtenDocsCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="meatHygiene">Are all documents critical
+                                        to
+                                        meat
+
+                                        hygiene, food safety, quality or
+
+                                        legality formally controlled and
+
+                                        reviewed?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="meatHygiene-0">
+                                                <input type="radio" name="meatHygiene"
+                                                       id="meatHygiene-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="meatHygiene-1">
+                                                <input type="radio" name="meatHygiene"
+                                                       id="meatHygiene-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="meatHygieneCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="meatHygieneCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="meatHygieneCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="auditRecords">Are internal and external
+                                        audits
+
+                                        schedules and records available?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="auditRecords-0">
+                                                <input type="radio" name="auditRecords"
+                                                       id="auditRecords-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="auditRecords-1">
+                                                <input type="radio" name="auditRecords"
+                                                       id="auditRecords-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="auditRecordsCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="auditRecordsCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="auditRecordsCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="trace">Is there complete traceability
+
+                                        from the suppliers to the
+
+                                        company?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="trace-0">
+                                                <input type="radio" name="trace"
+                                                       id="trace-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="trace-1">
+                                                <input type="radio" name="trace"
+                                                       id="trace-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="traceCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="traceCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="traceCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="legislation">Are you fully aware of the
+                                        latest
+
+                                        legislation controlling your
+
+                                        company’s food manufacturing
+
+                                        operations?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="legislation-0">
+                                                <input type="radio" name="legislation"
+                                                       id="legislation-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="legislation-1">
+                                                <input type="radio" name="legislation"
+                                                       id="legislation-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="legislationCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="legislationCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="legislationCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="smooth">Are all plant and equipment
+
+                                        constructed of smooth and
+
+                                        impermeable surfaces?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="smooth-0">
+                                                <input type="radio" name="smooth"
+                                                       id="smooth-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="smooth-1">
+                                                <input type="radio" name="smooth"
+                                                       id="smooth-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="smoothCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="smoothCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="smoothCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="cleaningRisk">Are all plant and equipment
+                                        on
+                                        a
+
+                                        cleaning schedule based on risk
+
+                                        and challenge?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="cleaningRisk-0">
+                                                <input type="radio" name="cleaningRisk"
+                                                       id="cleaningRisk-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="cleaningRisk-1">
+                                                <input type="radio" name="cleaningRisk"
+                                                       id="cleaningRisk-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="cleaningRiskCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="cleaningRiskCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="cleaningRiskCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="machineCondition">Are all slaughtering
+                                        machines /
+
+                                        processing plants & blades,
+
+                                        conveyor belt in a satisfactory
+
+                                        condition?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="machineCondition-0">
+                                                <input type="radio" name="machineCondition"
+                                                       id="machineCondition-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="machineCondition-1">
+                                                <input type="radio" name="machineCondition"
+                                                       id="machineCondition-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="machineConditionCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="machineConditionCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="machineConditionCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="cleaningSystem">Does the company use
+                                        <br>
+                                        - Cleaning in place (CIP)
+
+                                        system or
+                                        <br>
+                                        - Manual cleaning system?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="cleaningSystem-0">
+                                                <input type="radio" name="cleaningSystem"
+                                                       id="cleaningSystem-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="cleaningSystem-1">
+                                                <input type="radio" name="cleaningSystem"
+                                                       id="cleaningSystem-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="cleaningSystemCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="cleaningSystemCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="cleaningSystemCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="pestControl">Does the business have pest
+
+                                        control procedure? If yes, please
+
+                                        state:<br>
+
+                                        ­ The contractor / in house
+                                        <br>
+                                        ­ The number and type of visits
+                                        per year: every day
+                                        <br>
+
+                                        ­ Is the contractor approved by
+
+                                        a recognised organisation (e.g.
+
+                                        British Pest Control
+
+                                        Association)?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="pestControl-0">
+                                                <input type="radio" name="pestControl"
+                                                       id="pestControl-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="pestControl-1">
+                                                <input type="radio" name="pestControl"
+                                                       id="pestControl-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="pestControlCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="pestControlCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="pestControlCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!-- Next Button step 3-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="step3Next"></label>
+                                    <div class="col-md-4">
+                                        <button id="step3Next" name="step3Next" type="button" class="btn btn-success">Next</button>
+                                    </div>
+                                </div>
+                                <!--                            Step 3 End-->
+                            </div>
+                            <!--                            Step 4 Start-->
+                            <div style="display: block;" id="step4">
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="col-lg-10">
+                                    <h3>PRODUCT & PROCESS CONTROL</h3>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="suppliers">Does the business have its own
+
+                                        farm / suppliers?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="suppliers-0">
+                                                <input type="radio" name="suppliers"
+                                                       id="suppliers-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="suppliers-1">
+                                                <input type="radio" name="suppliers"
+                                                       id="suppliers-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="suppliersCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="suppliersCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="suppliersCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="monitorsuppliers">How do you monitor your
+
+                                        suppliers?
+                                        <br>
+                                        ­ Self audit questionnaire?
+                                        <br>
+                                        ­ Farm / plant visits?
+                                        <br>
+                                        ­ Other?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="monitorsuppliers-0">
+                                                <input type="radio" name="monitorsuppliers"
+                                                       id="monitorsuppliers-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="monitorsuppliers-1">
+                                                <input type="radio" name="monitorsuppliers"
+                                                       id="monitorsuppliers-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="monitorsuppliersCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="monitorsuppliersCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="monitorsuppliersCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="distribution">Is distribution carried out
+                                        by
+                                        the
+
+                                        company’s own vehicles or by
+
+                                        contractor?
+                                        <br>
+                                        ­ If a contractor is used, who
+
+                                        monitors the condition of their
+
+                                        vehicles?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="distribution-0">
+                                                <input type="radio" name="distribution"
+                                                       id="distribution-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="distribution-1">
+                                                <input type="radio" name="distribution"
+                                                       id="distribution-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="distributionCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="distributionCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="distributionCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="unloading">Who monitors the unloading of
+
+                                        the animal into the Lairage?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="unloading-0">
+                                                <input type="radio" name="unloading"
+                                                       id="unloading-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="unloading-1">
+                                                <input type="radio" name="unloading"
+                                                       id="unloading-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="unloadingCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="unloadingCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="unloadingCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="dailyAverage">What is the daily average
+                                        DOA?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="dailyAverage-0">
+                                                <input type="radio" name="dailyAverage"
+                                                       id="dailyAverage-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="dailyAverage-1">
+                                                <input type="radio" name="dailyAverage"
+                                                       id="dailyAverage-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="dailyAverageCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="dailyAverageCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="dailyAverageCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="animalStay">How long does the animal stay
+                                        in
+
+                                        the lairage?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="animalStay-0">
+                                                <input type="radio" name="animalStay"
+                                                       id="animalStay-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="animalStay-1">
+                                                <input type="radio" name="animalStay"
+                                                       id="animalStay-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="animalStayCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="animalStayCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="animalStayCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="drinkingwater">Are animal given drinking
+                                        water /
+
+                                        feed prior to slaughter?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="drinkingwater-0">
+                                                <input type="radio" name="drinkingwater"
+                                                       id="drinkingwater-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="drinkingwater-1">
+                                                <input type="radio" name="drinkingwater"
+                                                       id="drinkingwater-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="drinkingwaterCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="drinkingwaterCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="drinkingwaterCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="stunningMethod">Which stunning methods
+                                        does
+                                        the
+
+                                        company use? Please state the
+
+                                        stunning parameters (Current,
+
+                                        Frequency, Voltage etc).</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="stunningMethod-0">
+                                                <input type="radio" name="stunningMethod"
+                                                       id="stunningMethod-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="stunningMethod-1">
+                                                <input type="radio" name="stunningMethod"
+                                                       id="stunningMethod-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="stunningMethodCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="stunningMethodCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="stunningMethodCommentsQ"></textarea> 
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="slaughteringMethod">Does the company use
+                                        manual /
+
+                                        mechanical slaughtering?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="slaughteringMethod-0">
+                                                <input type="radio" name="slaughteringMethod"
+                                                       id="slaughteringMethod-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="slaughteringMethod-1">
+                                                <input type="radio" name="slaughteringMethod"
+                                                       id="slaughteringMethod-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="slaughteringMethodCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="slaughteringMethodCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="slaughteringMethodCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="slaughterHour">How many Poultry, Ovine &
+
+                                        Bovine does the company
+
+                                        slaughter in an hour?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="slaughterHour-0">
+                                                <input type="radio" name="slaughterHour"
+                                                       id="slaughterHour-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="slaughterHour-1">
+                                                <input type="radio" name="slaughterHour"
+                                                       id="slaughterHour-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="slaughterHourCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="slaughterHourCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="slaughterHourCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="bleedingTime">What is the bleeding
+                                        time?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="bleedingTime-0">
+                                                <input type="radio" name="bleedingTime"
+                                                       id="bleedingTime-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="bleedingTime-1">
+                                                <input type="radio" name="bleedingTime"
+                                                       id="bleedingTime-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="bleedingTimeCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="bleedingTimeCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="bleedingTimeCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="muslimSlaughters">How many Muslim
+                                        slaughterer(s)
+
+                                        work for the company?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="muslimSlaughters-0">
+                                                <input type="radio" name="muslimSlaughters"
+                                                       id="muslimSlaughters-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="muslimSlaughters-1">
+                                                <input type="radio" name="muslimSlaughters"
+                                                       id="muslimSlaughters-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="muslimSlaughtersCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="muslimSlaughtersCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="muslimSlaughtersCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="foodSafety">Do the slaughterhouse /
+
+                                        portioning and cutting plant have
+
+                                        food safety system in place?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="foodSafety-0">
+                                                <input type="radio" name="foodSafety"
+                                                       id="foodSafety-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="foodSafety-1">
+                                                <input type="radio" name="foodSafety"
+                                                       id="foodSafety-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="foodSafetyCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="foodSafetyCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="foodSafetyCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="productTesting">Is product testing
+                                        carried
+                                        out on
+
+                                        site or at contracted facilities?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="productTesting-0">
+                                                <input type="radio" name="productTesting"
+                                                       id="productTesting-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="productTesting-1">
+                                                <input type="radio" name="productTesting"
+                                                       id="productTesting-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="productTestingCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="productTestingCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="productTestingCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="facilitiesaccredited">Are such facilities
+                                        accredited by a
+
+                                        recognised organisation for the
+
+                                        test carried out? If yes, please
+
+                                        state accrediting organisation:</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="facilitiesaccredited-0">
+                                                <input type="radio" name="facilitiesaccredited"
+                                                       id="facilitiesaccredited-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="facilitiesaccredited-1">
+                                                <input type="radio" name="facilitiesaccredited"
+                                                       id="facilitiesaccredited-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="facilitiesaccreditedCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="facilitiesaccreditedCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="facilitiesaccreditedCommentsQ"></textarea> 
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="rawnfinal">Please state how raw and final
+
+                                        product testing is done and the
+
+                                        frequency it is carried out:</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="rawnfinal-0">
+                                                <input type="radio" name="rawnfinal"
+                                                       id="rawnfinal-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="rawnfinal-1">
+                                                <input type="radio" name="rawnfinal"
+                                                       id="rawnfinal-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="rawnfinalCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="rawnfinalCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="rawnfinalCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="contamination">What controls are in place
+                                        for
+                                        the
+
+                                        detection of any metal / foreign
+
+                                        body contaminants throughout the
+
+                                        Process?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="contamination-0">
+                                                <input type="radio" name="contamination"
+                                                       id="contamination-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="contamination-1">
+                                                <input type="radio" name="contamination"
+                                                       id="contamination-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="contaminationCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="contaminationCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="contaminationCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="qualityControl">Are Quality Control
+                                        inspection
+
+                                        schedules kept?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="qualityControl-0">
+                                                <input type="radio" name="qualityControl"
+                                                       id="qualityControl-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="qualityControl-1">
+                                                <input type="radio" name="qualityControl"
+                                                       id="qualityControl-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="qualityControlCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="qualityControlCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="qualityControlCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="segregatedAreas">Does the company have
+
+                                        segregated areas for the allergens,
+
+                                        vegans/vegetarians, halal, etc?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="segregatedAreas-0">
+                                                <input type="radio" name="segregatedAreas"
+                                                       id="segregatedAreas-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="segregatedAreas-1">
+                                                <input type="radio" name="segregatedAreas"
+                                                       id="segregatedAreas-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="segregatedAreasCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="segregatedAreasCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="segregatedAreasCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!-- Next Button step 4-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="step4Next"></label>
+                                    <div class="col-md-4">
+                                        <button id="step4Next" name="step4Next" type="button" class="btn btn-success">Next</button>
+                                    </div>
+                                </div>
+                                <!--                            Step 4 End-->
+                            </div>
+                            <!--                            Step 5 start-->
+                            <div style="display: block;" id="step5">
+                                <div class="col-lg-10">
+                                    <h3>HYGIENE POLICY</h3>
+                                </div>
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="responsible">Who is responsible for
+                                        company
+
+                                        hygiene?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="responsible-0">
+                                                <input type="radio" name="responsible"
+                                                       id="responsible-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="responsible-1">
+                                                <input type="radio" name="responsible"
+                                                       id="responsible-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="responsibleCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="responsibleCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="responsibleCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="hygieneTeam">Do you have trained hygiene
+
+                                        team?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="hygieneTeam-0">
+                                                <input type="radio" name="hygieneTeam"
+                                                       id="hygieneTeam-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="hygieneTeam-1">
+                                                <input type="radio" name="hygieneTeam"
+                                                       id="hygieneTeam-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="hygieneTeamCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="hygieneTeamCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="hygieneTeamCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="riskPersonnel">Are separate facilities
+                                        provided
+
+                                        for high and low risk personnel?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="riskPersonnel-0">
+                                                <input type="radio" name="riskPersonnel"
+                                                       id="riskPersonnel-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="riskPersonnel-1">
+                                                <input type="radio" name="riskPersonnel"
+                                                       id="riskPersonnel-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="riskPersonnelCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="riskPersonnelCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="riskPersonnelCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="cleaningChemicals">Is the suitability of
+                                        the
+                                        cleaning
+
+                                        chemicals controlled?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="cleaningChemicals-0">
+                                                <input type="radio" name="cleaningChemicals"
+                                                       id="cleaningChemicals-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="cleaningChemicals-1">
+                                                <input type="radio" name="cleaningChemicals"
+                                                       id="cleaningChemicals-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="cleaningChemicalsCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="cleaningChemicalsCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="cleaningChemicalsCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="cleaningSchedules">Do you have written
+                                        cleaning
+
+                                        schedules, which cover all site
+
+                                        fabric and equipment?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="cleaningSchedules-0">
+                                                <input type="radio" name="cleaningSchedules"
+                                                       id="cleaningSchedules-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="cleaningSchedules-1">
+                                                <input type="radio" name="cleaningSchedules"
+                                                       id="cleaningSchedules-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="cleaningSchedulesCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="cleaningSchedulesCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="cleaningSchedulesCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="toilets">Are the number of toilets, hand
+
+                                        washing and wash area facilities
+
+                                        adequate for the number of the
+
+                                        staff employed?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="toilets-0">
+                                                <input type="radio" name="toilets"
+                                                       id="toilets-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="toilets-1">
+                                                <input type="radio" name="toilets"
+                                                       id="toilets-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="toiletsCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="toiletsCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="toiletsCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="procedure">Does the company have
+
+                                        procedure?
+                                        <br>
+                                        - Personal hygiene policy
+                                        <br>
+                                        - Food hygiene
+                                        <br>
+                                        - Visitor hygiene policy</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="procedure-0">
+                                                <input type="radio" name="procedure"
+                                                       id="procedure-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="procedure-1">
+                                                <input type="radio" name="procedure"
+                                                       id="procedure-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="procedureCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="procedureCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="procedureCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="handWashing">Are there written procedures
+                                        at
+
+                                        staff / visitors entry to production,
+
+                                        packaging and storage areas
+
+                                        detailing the order of hand
+
+                                        washing, wearing protective
+
+                                        clothes / shoes?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="handWashing-0">
+                                                <input type="radio" name="handWashing"
+                                                       id="handWashing-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="handWashing-1">
+                                                <input type="radio" name="handWashing"
+                                                       id="handWashing-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="handWashingCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="handWashingCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="handWashingCommentsQ"></textarea> 
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="shoes">Is clean protective clothes /
+                                        shoes
+
+                                        stored separately from outdoor
+
+                                        personal clothes / shoes?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="shoes-0">
+                                                <input type="radio" name="shoes"
+                                                       id="shoes-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="shoes-1">
+                                                <input type="radio" name="shoes"
+                                                       id="shoes-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="shoesCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="shoesCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="shoesCommentsQ"></textarea>
+                                    </div>
+                                </div>
+                                <!-- Next Button step 5-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="step5Next"></label>
+                                    <div class="col-md-4">
+                                        <button id="step5Next" name="step5Next" type="button" class="btn btn-success">Next</button>
+                                    </div>
+                                </div>
+
+                                <!--                            step 5 end-->
+                            </div>
+
+                            <!--                            Step 6 Start-->
+                            <div style="display: block;" id="step6">
+                                <div class="col-lg-10">
+                                    <h3>HALAL STANDARD</h3>
+                                </div>
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="pork">Is there any pork or porcine
+
+                                        derivatives processed/ handled/
+
+                                        stored on-site?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="pork-0">
+                                                <input type="radio" name="pork"
+                                                       id="pork-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="pork-1">
+                                                <input type="radio" name="pork"
+                                                       id="pork-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="porkCommentsQ">Comments</label>
+
+                                    <div class="col-md-4">
+                                    <textarea class="form-control" id="porkCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="porkCommentsQ"></textarea> 
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--Block-->
+                                <!-- Multiple Radios -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="labelled">Are Halal products clearly
+
+                                        labelled?</label>
+
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label for="labelled-0">
+                                                <input type="radio" name="labelled"
+                                                       id="labelled-0" value="1" checked="checked">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="labelled-1">
+                                                <input type="radio" name="labelled"
+                                                       id="labelled-1" value="0">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"
+                                           for="labelledCommentsQ">Comments</label>
+
+                                    <div class="col-md-4"> 
+                                    <textarea class="form-control" id="labelledCommentsQ" style="font-weight: bold;border:solid 1px orange;"
+                                              name="labelledCommentsQ"></textarea> 
+                                    </div>
+                                </div>
+                                <!-- Submit Button step 6-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="step6Submit"></label>
+                                    <div class="col-md-4">
+                                        <button id="step6Submit" name="step6Submit" type="submit" class="btn btn-success">Submit</button>
+                                    </div>
+                                </div>
+                                <!--                            Block-->
+                                <!--                            Step 6 End-->
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+        </ion-content>
+
+  
+</ion-view>

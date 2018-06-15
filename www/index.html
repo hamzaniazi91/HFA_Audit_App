@@ -1,0 +1,526 @@
+<!DOCTYPE html >
+<html ng-app="starter">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/ng-cordova.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    
+    <script src="lib/ionic/js/angular/angular-resource.js"></script>
+  </head>
+  <body ng-controller="ToDoListCtrl" animation="slide-left-right-ios7">
+
+
+
+
+
+    <!--
+      The nav bar that will be updated as we navigate between views.
+    -->
+
+    <!--
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+
+
+    
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+   
+
+    -->
+    <ion-nav-view></ion-nav-view>
+ 
+
+
+    
+
+
+
+    
+
+<!--OPEN MODAL 1 For Filling DETAILS   -->
+
+ <script id="modal.html" type="text/ng-template">
+<div class="modal" ng-controller="MainCtrl">
+
+
+
+  <div class="bar bar-header bar-calm">
+    <button class="button" ng-click="closeModal(1)">back</button>
+    <h1 class="title">Audit Outcome Sheet</h1>
+  </div>
+  <br></br>
+  <br></br>
+  <ion-content ng-class="{'has-loading': data.isLoading}">
+  <form ng-submit="submit(task)">
+  
+
+    <div class="list">
+      <div class="list list-inset">
+
+<br>
+
+<h4>Organisation Name</h4>
+
+<label class="item item-input">
+<input ng-model="task.orgname" placeholder="" type="text">
+            </label>
+            
+
+            <br>
+
+      <h4>Outstanding Documentation</h4>
+         <label class="item item-input">
+              
+              <input ng-model="task.comment1" placeholder="Comment #1" type="text">
+            </label>
+            <label class="item item-input">
+             
+              <input ng-model="task.comment2" placeholder="Comment #2" type="text">
+            </label>
+            <label class="item item-input">
+              
+              <input ng-model="task.comment3"  placeholder="Comment #3"  type="text">
+            </label>
+            <label class="item item-input">
+              
+              <input ng-model="task.comment4"  placeholder="Comment #4"  type="text">
+            </label>
+
+
+<h4>Issues Raised/Non Conformances (if any)</h4>
+            <label class="item item-input">
+              
+              <input ng-model="task.issues" type="text">
+            </label>
+
+
+
+            <h4>Suggested Corrective Actions (if any)</h4>
+
+
+            <label class="item item-input">
+             
+              <input ng-model="task.sugest" type="text">
+            </label>
+
+
+
+            <h4> Re-Audit: </h4>
+
+
+
+
+<br>
+
+<br>
+
+
+  <div class="list">
+        
+        <div class="item item-divider">
+         Selected Value: {{ data.serverSide }}
+        </div>
+        
+        <ion-radio ng-repeat="item in serverSideList"
+                   ng-value="item.value"
+                   ng-model="data.serverSide"
+                   ng-change="serverSideChange(item)"
+                   name="server-side">
+          {{ item.text }}
+        </ion-radio>
+        
+        
+        
+      </div>
+
+
+
+
+            <label class="item item-input">
+              <span class="input-label" >Date :</span>
+              <input id="dateValue" ng-model="task.date" type="date"  >
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Secret ID  </span>
+              <input ng-model="task.secret_id" type="text">
+            </label>
+      
+
+
+
+
+
+      <h5>I have read and understood the contents of this document and have made a copy for my records on 
+this given day of<h5>
+
+      <h5>Signed by or on behalf of:</h5>  
+
+ 
+      <h5> Client Company</h5>
+      <input ng-model="task.comp" placeholder="Client Company" type="text"  style="font-weight: bold;border:solid 1px orange;"> 
+
+      <h5> Print Name </h5>
+      <input ng-model="task.print1" placeholder="PrintName" type="text" style="font-weight: bold;border:solid 1px orange;"> 
+
+       <h5> Signed by HFA Auditor:</h5>
+      <input ng-model="task.sign" placeholder="Signed by" type="text" style="font-weight: bold;border:solid 1px orange;"> 
+
+
+       <h5> Print Name </h5>
+      <input ng-model="task.print2" placeholder="PrintName" type="text" style="font-weight: bold;border:solid 1px orange;"> 
+
+
+      <button class="button button-block button-positive" type="submit">
+        Submit Form
+      </button>
+
+
+
+
+
+    </div>
+  
+
+  </form>
+
+ </ion-content>
+
+ 
+</div>
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+<script id="modalform2.html" type="text/ng-template">
+  <div class="modal" ng-controller="MainCtrl">
+
+
+
+    <div class="bar bar-header bar-calm">
+      <button class="button" ng-click="closeModal(3)">back</button>
+      <h1 class="title">Add Form 2</h1>
+    </div>
+    <br></br>
+    <br></br>
+    <ion-content ng-class="{'has-loading': data.isLoading}">
+    <form ng-submit="submit2(task2,under,nat,taxi,car,air,hot,f,ld,sun,ofc,oth,total)">
+
+
+
+
+
+
+      <div class="list">
+        <div class="list list-inset">
+
+         <br>
+
+         <h4>Claimant Name</h4>
+         <label class="item item-input">
+
+           <input ng-model="task2.claimname" placeholder="Claiment Name" type="text">
+         </label>
+
+
+
+         <h4>Description/ Reason of Claim</h4>
+
+         <li class="item item-checkbox">
+           <label class="checkbox">
+             <input ng-model="pushNotification.reason" ng-true-value="1" ng-false-value="0"
+             ng-change="pushNotificationChange()" type="checkbox">
+           </label>
+           Audit
+         </li>
+
+
+         <h4>Company Name</h4>
+         <label class="item item-input">
+
+           <input ng-model="task2.compname" placeholder="Company Name" type="text">
+         </label>
+
+         <label class="item item-input">
+           <span class="input-label" >Date :</span>
+           <input id="dateValue" ng-model="task2.date" type="date"  >
+         </label>
+         <h4>Signature</h4>
+         <label class="item item-input">
+
+          <input ng-model="task2.sign" placeholder="Signature" type="text">
+        </label>
+        
+
+
+
+        <br>
+        <br>
+
+        <div class="list">
+
+
+
+         <ion-checkbox ng-model="pushNotification.meet" ng-true-value="1" ng-false-value="0"
+         ng-change="pushNotificationChange()">
+         Meeting
+       </ion-checkbox>
+
+
+
+
+       <ion-checkbox ng-model="pushNotification.over" ng-true-value="1" ng-false-value="0"
+       ng-change="pushNotificationChange()">
+       Overseas Travel
+     </ion-checkbox>
+     
+
+
+     <ion-checkbox ng-model="pushNotification.train" ng-true-value="1" ng-false-value="0"
+     ng-change="pushNotificationChange()">
+     Training
+   </ion-checkbox>
+
+
+
+   <ion-checkbox ng-model="pushNotification.other" ng-true-value="1" ng-false-value="0"
+   ng-change="pushNotificationChange()">
+   Other Authorised Events
+ </ion-checkbox>
+
+
+
+ <ion-checkbox ng-model="pushNotification.sem" ng-true-value="1" ng-false-value="0"
+ ng-change="pushNotificationChange()">
+ Seminar/Conference
+</ion-checkbox>
+
+
+<ion-checkbox ng-model="pushNotification.ofc" ng-true-value="1" ng-false-value="0"
+ng-change="pushNotificationChange()">
+Office Expense
+</ion-checkbox>
+
+</div>
+
+<br>
+<br>
+
+<label class="item item-input">
+
+  <div class="row">
+    <div class="col">Date</div>
+    <div class="col">Desc</div>
+    <div class="col">C.Card</div>
+    <div class="col">Cash</div>
+    <div class="col">Total</div>
+  </div>
+</label>
+
+<div class="row">
+  <input ng-model="under.date" type="date" class="col col-70"></input>
+  <div class="col col-40">Underground Ticket</div>
+  <input ng-model="under.cost1" id="div-allign" type="number" class="col"></input>
+  <input ng-model="under.cost2" id="div-allign" type="number" class="col"></input>
+  <input ng-model="under.total = under.cost1 + under.cost2" id="div-allign"type="number" class="col"></input>
+
+</div>
+
+<div class="row">
+  <input ng-model="nat.date" type="date" class="col"></input>
+  <div class="col">National Rail Ticket</div>
+  <input ng-model="nat.cost1" id="div-allign"type="number" class="col"></input>
+  <input ng-model="nat.cost2" id="div-allign"type="number" class="col"></input>
+  <input ng-model="nat.total = nat.cost1 + nat.cost2" id="div-allign"type="number" class="col"></input>
+
+</div>
+
+
+<div class="row">
+  <input ng-model="taxi.date" type="date" class="col"></input>
+  <div class="col">Taxi Fare</div>
+  <input ng-model="taxi.cost1" id="div-allign"type="number" class="col"></input>
+  <input ng-model="taxi.cost2" id="div-allign"type="number" class="col"></input>
+  <input ng-model="taxi.total = taxi.cost1 + taxi.cost2" id="div-allign"type="number" class="col"></input>
+
+</div>
+
+<div class="row">
+  <input ng-model="car.date" type="date" class="col"></input>
+  <div class="col">Car Fare</div>
+  <input ng-model="car.cost1" id="div-allign"type="number" class="col"></input>
+  <input ng-model="car.cost2" id="div-allign"type="number" class="col"></input>
+  <input ng-model="car.total = car.cost1 + car.cost2" id="div-allign"type="number" class="col"></input>
+
+</div>
+
+<div class="row">
+  <input ng-model="air.date" type="date" class="col"></input>
+  <div class="col">Air Fare</div>
+  <input ng-model="air.cost1" id="div-allign"type="number" class="col"></input>
+  <input ng-model="air.cost2" id="div-allign"type="number" class="col"></input>
+  <input ng-model="air.total = air.cost1 + air.cost2" id="div-allign"type="number" class="col"></input>
+
+</div>
+
+<div class="row">
+  <input ng-model="hot.date" type="date" class="col"></input>
+  <div class="col col-60">Hotel Accommodation</div>
+  <input ng-model="hot.cost1" id="div-allign"type="number" class="col"></input>
+  <input ng-model="hot.cost2" id="div-allign"type="number" class="col"></input>
+  <input ng-model="hot.total = hot.cost1 + hot.cost2" id="div-allign"type="number" class="col"></input>
+
+</div>
+
+<div class="row">
+  <input  ng-model="f.date"type="date" class="col"></input>
+  <div class="col">Fuel</div>
+  <input ng-model="f.cost1" id="div-allign"type="number" class="col"></input>
+  <input ng-model="f.cost2" id="div-allign"type="number" class="col"></input>
+  <input ng-model="f.total = f.cost1 + f.cost2" id="div-allign"type="number" class="col"></input>
+
+
+</div>
+
+<div class="row">
+  <input ng-model="ld.date" type="date" class="col"></input>
+  <div class="col">Lunch/Dinner</div>
+  <input ng-model="ld.cost1" id="div-allign"type="number" class="col"></input>
+  <input ng-model="ld.cost2" id="div-allign"type="number" class="col"></input>
+  <input ng-model="ld.total = ld.cost1 + ld.cost2" id="div-allign"type="number" class="col"></input>
+
+</div>
+
+<div class="row">
+  <input ng-model="sun.date" type="date" class="col"></input>
+  <div class="col">Sundry</div>
+  <input ng-model="sun.cost1" id="div-allign"type="number" class="col"></input>
+  <input ng-model="sun.cost2" id="div-allign"type="number" class="col"></input>
+  <input ng-model="sun.total = sun.cost1 + sun.cost2" id="div-allign"type="number" class="col"></input>
+
+</div>
+
+<div class="row">
+  <input ng-model="ofc.date" type="date" class="col"></input>
+  <div class="col">Office consumables</div>
+  <input ng-model="ofc.cost1" id="div-allign"type="number" class="col"></input>
+  <input ng-model="ofc.cost2" id="div-allign"type="number" class="col"></input>
+  <input ng-model="ofc.total = ofc.cost1 + ofc.cost2" id="div-allign" type="number" class="col"></input>
+
+</div>
+
+<div class="row">
+  <input  ng-model="oth.date"  type="date" class="col"></input>
+  <div class="col">Others</div>
+  <input ng-model="oth.cost1" id="div-allign"type="number" class="col"></input>
+  <input ng-model="oth.cost2" id="div-allign"type="number" class="col"></input>
+  <input ng-model="oth.total = oth.cost1 + oth.cost2" id="div-allign"type="number" class="col"></input>
+
+</div>
+
+
+
+<div class="row">
+  <input ng-model="total.date" type="date" class="col"></input>
+  <div style="text-align:right" class="col"><b>Total</b></div>
+  <input ng-model="total.Total1 = oth.cost1 + ofc.cost1 + sun.cost1 + ld.cost1 + f.cost1+ hot.cost1 + air.cost1+ car.cost1 + taxi.cost1 
+  +nat.cost1 + under.cost1" id="div-allign"type="number" class="col"></input>
+  <input ng-model="total.Total2 = oth.cost2 + ofc.cost2 + sun.cost2 + ld.cost2 + f.cost2 + hot.cost2 + air.cost2 + car.cost2 + taxi.cost2 
+  + nat.cost2 + under.cost2" id="div-allign"type="number" class="col"></input>
+  <input ng-model="total.Final1 = total.Total1 + total.Total2" id="div-allign"type="number" class="col"></input>
+
+</div>
+
+
+
+
+
+
+
+
+
+<button class="button button-block button-positive" type="submit">
+ Submit Form
+</button>
+
+</div>
+
+</form>
+</ion-content>
+
+
+</div>
+</script>
+
+
+
+
+ <script id="modal2.html" type="text/ng-template">
+<div class="modal">
+
+
+
+  <div class="bar bar-header bar-calm">
+    <button class="button" ng-click="closeModal(2)">back</button>
+    <h1 class="title">Details</h1>
+  </div>
+
+
+  <br></br>
+  <br></br>
+
+    <h2>Audit Details</h2>
+
+      
+              <label class="item item-input">
+              <span class="input-label" >Date :</span>
+              <input id="dateValue2" ng-model="newUser.date" type="text"  >
+            </label>
+           
+      
+      <button class="button button-block button-positive" type="submit">
+        Submit Review
+      </button>
+    </div>
+  </form>
+
+
+</div>
+</script>
+
+
+
+  </body>
+</html>

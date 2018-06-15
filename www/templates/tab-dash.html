@@ -1,0 +1,88 @@
+<ion-view view-title="Audit App"  >
+
+
+     <ion-content ng-class="{'has-loading': data.isLoading}">
+
+     
+  <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="Kalendae()">
+  </ion-refresher>
+
+
+<div class="bar bar-header bar-dark">
+  <h1 class="title">Halal Food Authority</h1>
+</div>
+
+<br>
+<br>
+
+
+  
+ <h2 style="color:#069;background-color: whitesmoke;" id="MyEdit">
+    Auditor :
+</h2>
+
+   <p style="background-color: whitesmoke;"> Pending Audits : <span class="badge badge-assertive">{{Auditdata}}</span> </p>
+
+<p id="MyEdit2">
+    
+</p>
+
+ 
+ 
+
+  
+
+   
+      <div id="wrap" data-tap-disabled="true" >
+
+  <div class="auto-kal" ></div>
+</div>
+
+<!--
+    <div class="list">
+
+        <a ng-repeat="item in items" 
+           href="#/{{item.id}}"
+           class="item item-thumbnail-left">
+
+          <img ng-src="{{ item.image }}">
+          <h2>{{ item.album }}</h2>
+          <h4>{{ item.artist }}</h4>
+        </a>
+
+      </div>
+
+
+-->
+
+
+
+ <div id="hamza1" class="buttons"  style="display:none;">
+    <button class="button button-block button-positive" ng-click="openModal(1); getDate(1);">Fill Document #1</button>
+  </div>
+
+   <div id="hamza2" class="buttons2" style="display:none;">
+    <button  class="button button-block button-positive" ng-click="openModal(3); getDate(3);">Fill Document #2</button>
+  </div>
+
+  <div id="hamza3" class="buttons3" style="display:none;">
+    <button  class="button button-block button-positive" ng-click="openModal(2); getDate(2)">View Details</button>
+    </div>
+
+
+ <div id="hamza4" class="buttons4"  style="display:none;">
+    <a href="#/tab/audit" class="button button-block button-positive" >Start Audit</a>
+
+  </div>
+
+    
+
+
+
+
+        </ion-content>
+
+  
+</ion-view>
